@@ -32,13 +32,9 @@ jobs:
           $content = $json.content
           Write-Output "content=$content" >> $env:GITHUB_OUTPUT
 
-    - name: Clone BAAH
-      run: |
-        git clone https://github.com/BlueArchiveArisHelper/BAAH.git
-        cd BAAH
-
     - name: Install dependencies
       run: |
+        git clone https://github.com/BlueArchiveArisHelper/BAAH.git ./
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
