@@ -31,11 +31,11 @@ jobs:
           Write-Output "version=$version" >> $env:GITHUB_OUTPUT
           $content = $json.content
           Write-Output "content=$content" >> $env:GITHUB_OUTPUT
+          git clone https://github.com/BlueArchiveArisHelper/BAAH.git
+          cd BAAH
 
     - name: Install dependencies
       run: |
-        git clone https://github.com/BlueArchiveArisHelper/BAAH.git
-        Copy-Item -Path "./BAAH" -Destination "./" -Recurse -Force
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
