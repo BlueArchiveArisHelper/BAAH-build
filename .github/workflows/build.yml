@@ -3,7 +3,7 @@ name: Package BAAH
 on:
   push:
     branches:
-        - main
+      - main
 
 permissions:
   contents: write
@@ -15,41 +15,35 @@ jobs:
       PYTHONIOENCODING: "utf-8"
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4  # 更新到最新版本
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5  # 更新到最新版本
       with:
-        python-version: 3.10.x
+        python-version: "3.10"
 
     - name: Setup Version
       id: version
       shell: pwsh
       run: |
-          $json = Get-Content -Path 'version.json' | ConvertFrom-Json
-          $version = $json.version
-          Write-Output "version=$version" >> $env:GITHUB_OUTPUT
-          $content = $json.content
-          Write-Output "content=$content" >> $env:GITHUB_OUTPUT
-          git clone https://github.com/BlueArchiveArisHelper/BAAH.git
-          cd BAAH
+        $json = Get-Content -Path 'version.json' | ConvertFrom-Json
+        $version = $json.version
+        Write-Output "version=$version" >> $env:GITHUB_OUTPUT
+        $content = $json.content
+        Write-Output "content=$content" >> $env:GITHUB_OUTPUT
+        
+        # 克隆BAAH仓库并进入目录
+        git clone https://github.com/BlueArchiveArisHelper/BAAH.git
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    # - name: Download Resource
-    #   uses: robinraju/release-downloader@v1.8
-    #   with:
-    #     repository: xiaofeiTM233/BAAH-Resource
-    #     fileName: "tools.zip"
-    #     latest: true
-    #     out-file-path: "tools"
-    #     extract: true
+      working-directory: ./BAAH  # 确保在BAAH目录中执行
 
     - name: Run package
       run: python package.py
+      working-directory: ./BAAH  # 确保在BAAH目录中执行
 
     - name: Release
       uses: softprops/action-gh-release@v2
@@ -57,12 +51,12 @@ jobs:
         draft: false
         prerelease: false
         name: "BAAH ${{ steps.version.outputs.version }}"
-        tag_name: "v${{ steps.version.outputs.version }}}"
+        tag_name: "v${{ steps.version.outputs.version }}"
         body: |
           ## BAAH v${{ steps.version.outputs.version }}
-          ${{ github.sha }}
+          Commit: ${{ github.sha }}
           通过Github Action Workflow构建发版
           ## 发版内容
           ${{ steps.version.outputs.content }}
         files: |
-          ./dist/*
+          ./BAAH/dist/*  # 确保路径正确指向BAAH目录下的dist
