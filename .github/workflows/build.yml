@@ -15,10 +15,10 @@ jobs:
       PYTHONIOENCODING: "utf-8"
 
     steps:
-    - uses: actions/checkout@v4  # 更新到最新版本
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5  # 更新到最新版本
+      uses: actions/setup-python@v5
       with:
         python-version: "3.10"
 
@@ -39,11 +39,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-      working-directory: ./BAAH  # 确保在BAAH目录中执行
+      working-directory: ./BAAH
 
     - name: Run package
       run: python package.py
-      working-directory: ./BAAH  # 确保在BAAH目录中执行
+      working-directory: ./BAAH
+
+    - name: List generated files (for debugging)
+      run: dir .\BAAH\dist\ /s /b
+      shell: pwsh
 
     - name: Release
       uses: softprops/action-gh-release@v2
@@ -59,4 +63,5 @@ jobs:
           ## 发版内容
           ${{ steps.version.outputs.content }}
         files: |
-          BAAH/dist/*  # 确保路径正确指向BAAH目录下的dist
+          BAAH/dist/**
+          BAAH/dist/*.zip
