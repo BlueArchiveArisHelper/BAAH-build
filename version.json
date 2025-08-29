@@ -1,4 +1,4 @@
 {
-    "version": "1.10.10",
-    "content": "Fix<br>适配国服UI变更"
+    "version": "1.10.12",
+    "content": "Fix:<br>修复国际服和日服课程表爱心数量识别问题<br>Fix the problem of recognizing the number of love hearts in international and Japanese service schedule<br><br>修复更新api遇阻时导致GUI进程无响应问题<br>Fix the problem of unresponsive GUI process when updating api is blocked<br><br>修复日服推图遇到等级过高提示会退出推图任务问题<br>Fix the problem of quitting quests in Japanese service when encountering the prompt of too high level in push map.<br><br>修复关卡所需票卷或体力不足时的弹窗识别异常问题<br>Fix the problem of pop-up windows recognizing anomalies when there are not enough Ticket Rolls or Stamina required for a level."
 }
