@@ -59,4 +59,4 @@ jobs:
           ## 发版内容
           ${{ steps.version.outputs.content }}
         files: |
-          ./BAAH/dist/*  # 确保路径正确指向BAAH目录下的dist
+          BAAH/dist/*  # 确保路径正确指向BAAH目录下的dist
