@@ -63,5 +63,5 @@ jobs:
           ## 发版内容
           ${{ steps.version.outputs.content }}
         files: |
-          BAAH/dist/**
-          BAAH/dist/*.zip
+          BAAH/dist/BAAH${{ steps.version.outputs.version }}.zip
+          BAAH/dist/BAAH${{ steps.version.outputs.version }}_update.zip
