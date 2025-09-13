@@ -46,7 +46,7 @@ jobs:
       working-directory: ./BAAH
 
     - name: List generated files (for debugging)
-      run: dir .\BAAH\dist\ /s /b
+      run: dir .\BAAH\dist\
       shell: pwsh
 
     - name: Release
