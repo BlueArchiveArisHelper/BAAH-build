@@ -1,4 +1,4 @@
 {
     "version": "1.10.12",
-    "content": "Fix:<br>修复国际服和日服课程表爱心数量识别问题<br>Fix the problem of recognizing the number of love hearts in international and Japanese service schedule<br><br>修复更新api遇阻时导致GUI进程无响应问题<br>Fix the problem of unresponsive GUI process when updating api is blocked<br><br>修复日服推图遇到等级过高提示会退出推图任务问题<br>Fix the problem of quitting quests in Japanese service when encountering the prompt of too high level in push map.<br><br>修复关卡所需票卷或体力不足时的弹窗识别异常问题<br>Fix the problem of pop-up windows recognizing anomalies when there are not enough Ticket Rolls or Stamina required for a level."
+    "content": "Fix:<br>修复国服推图类似13-A的ocr识别<br>修复即使报错也发送通知邮件的功能<br>修复多标签页面打开时，重启GUI命令窗口会导致多次更新API请求<br><br>Fix ocr recognition in national push map similar to 13-A<br>Fix sending notification emails even if an error is reported<br>Fix restarting the GUI command window when a multi-tabbed page is open will result in multiple API update requests"
 }
