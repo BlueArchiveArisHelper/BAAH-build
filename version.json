@@ -1,4 +1,4 @@
 {
-    "version": "1.10.13",
-    "content": "Fix:<br>修复国服推图类似13-A的ocr识别<br>修复即使报错也发送通知邮件的功能<br>修复多标签页面打开时，重启GUI命令窗口会导致多次更新API请求<br><br>Fix ocr recognition in national push map similar to 13-A<br>Fix sending notification emails even if an error is reported<br>Fix restarting the GUI command window when a multi-tabbed page is open will result in multiple API update requests"
+    "version": "1.10.14",
+    "content": "Fix:<br>修复推图时识别关卡号把分隔符 | 识别成1<br>Fixed to identify the level number when pushing pictures | to identify the separator as 1"
 }
