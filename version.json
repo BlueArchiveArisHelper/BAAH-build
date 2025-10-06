@@ -1,4 +1,4 @@
 {
-    "version": "1.10.14",
-    "content": "Fix:<br>修复推图时识别关卡号把分隔符 | 识别成1<br>Fixed to identify the level number when pushing pictures | to identify the separator as 1"
+    "version": "1.10.15",
+    "content": "Update:<br>优化了进入游戏时代码逻辑（有问题请加群反馈 985729020 )<br>Optimized the code logic when entering the game<br><br>添加了领取每日免费奖励功能<br>Add collect daily free rewards task<br><br>Fix:<br>修复11-4 推图Fix 11-4 Quest<br><br>修复 游戏包体更新 相关<br>Fix Game package update"
 }
