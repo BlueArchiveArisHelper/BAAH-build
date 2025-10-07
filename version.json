@@ -1,4 +1,4 @@
 {
-    "version": "1.10.15",
-    "content": "Update:<br>优化了进入游戏时代码逻辑（有问题请加群反馈 985729020 )<br>Optimized the code logic when entering the game<br><br>添加了领取每日免费奖励功能<br>Add collect daily free rewards task<br><br>Fix:<br>修复11-4 推图Fix 11-4 Quest<br><br>修复 游戏包体更新 相关<br>Fix Game package update"
+    "version": "1.10.16",
+    "content": "（有问题请加群反馈 985729020 )<br><br>Fix:<br>修复1.10.15卡在每日签到页面的问题<br>Fix block on daily check-in page issue in 1.10.15<br><br>Update:<br>优化了模拟器路径填写Mumu5.0时的逻辑<br>Optimize the emulator fill-in logic of Mumu5.0"
 }
