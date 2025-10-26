@@ -11,11 +11,11 @@ with open("version.json", "r") as f:
 if tag_name == context["version"]:
     print("No change")
     exit(1)
+else:
+    context["version"] = str(tag_name).replace("BAAH","")
+    context["context"] = str(body)
 
-context["version"] = str(tag_name)
-context["context"] = str(body)
+    with open("version.json", "w") as f:
+        f.write(json.dumps(context))
 
-with open("version.json", "w") as f:
-    f.write(json.dumps(context))
-
-exit(0)
+    exit(0)
