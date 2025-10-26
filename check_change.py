@@ -8,7 +8,7 @@ body = data["body"]
 with open("version.json", "r") as f:
     context = json.loads(f.read())
 
-if tag_name == context["version"]:
+if tag_name.replace("BAAH","") == context["version"]:
     print("No change")
     exit(1)
 else:
