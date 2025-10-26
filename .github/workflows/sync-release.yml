@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Check Changes
-        run: python3 check_changes.py
+        run: |
+          wget https://github.com/BlueArchiveArisHelper/BAAH-build/raw/refs/heads/main/check_change.py
+          python check_change.py
 
       - name: Push Changes
         run: |
